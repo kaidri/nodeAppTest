@@ -1,0 +1,15 @@
+#wrapper {
+    margin: auto;
+    background-color: blue;
+}
+
+h1 {
+    align-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #232323;
+}
+
+p {
+    align-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
