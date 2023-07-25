@@ -1,4 +1,4 @@
-module.export = function(template, product){
+module.exports = function(template, product){
     let output = template.replace('{{%IMAGE%}}', product.productImage);
     output = output.replace('{{%NAME%}}', product.name);
     output = output.replace('{{%MODELNAME%}}', product.modelName);

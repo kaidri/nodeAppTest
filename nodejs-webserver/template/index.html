@@ -37,13 +37,10 @@
                 padding-top: 40px;
             }
             .products-list{
-                width: 70%;
-                padding: 10px 30px;
-                background-color: #343434;
-                border-radius: 10px;
+                padding: 10px 10px;
                 margin: 2px auto;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 color: #fff;
+                border-bottom: #232323 1.5px solid;
             }
             .products-detail{
                 display: flex;
@@ -67,11 +64,11 @@
                 font-size: 12px;
                 margin: 2px 0px 2px 0px;
             }
-            h3{
+            h5,h4,h3,h2{
                 margin: 10px 0px 10px 0px;
             }
             .product-info{
-                width: 30%;
+                width: 20%;
                 padding: 5px 0px;
                 text-align: left;
             }
@@ -86,6 +83,39 @@
             .btn-secondary{
                 background-color: #FF5733;
             }
+			.btn-back{
+				padding: 6px 20px;
+                border-radius: 15px;
+                border: none;
+				background-color:#FF3131;
+				color: white;
+			}
+			.product-page{
+				padding: 20px 50px;
+			}
+			.product-desc{
+				display: flex;
+				width: 100%;
+			}
+			.product-desc-image{
+			    margin-right: 20px;
+			}
+			.product-details-info{
+				margin-left: 40px;
+				text-align: left;
+			}
+			.product-desc-p{
+				margin-top: 4px;
+				font-size: 14px;
+			}
+			.product-desc-details{
+				text-align: left;
+				margin: 20px 0px;
+			}
+			.product-details-desc{
+				margin-top: 60px;
+				font-size: 16px;
+			}
         </style>
     </head>
     <body>
@@ -97,7 +127,7 @@
                 <a href="Contact">Contact</a>
             </div>
             <div class="page-content">
-                <h3>{{%CONTENT%}}</h3>
+                {{%CONTENT%}}
             </div>
         </div>
     </body>
