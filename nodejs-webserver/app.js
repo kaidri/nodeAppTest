@@ -1,12 +1,17 @@
+// CORE MODULES
 const readline = require('readline');
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
 
+// USER DEFINED MODULES
+const  replaceHtml = require('./Modules/replaceHtml')
+
 const html = fs.readFileSync('./template/index.html', 'utf-8');
 let products = JSON.parse(fs.readFileSync('./Data/products.json', 'utf-8'));
 let productListHtml = fs.readFileSync('./template/product-list.html', 'utf-8');
 
+<<<<<<< Updated upstream
 /* let productHtmlArray = products.map((prod) => {
     let output = productListHtml.replace(`{{%IMAGE%}}`, prod.productImage);
     output = output.replace('{{%NAME%}}', prod.name);
@@ -35,6 +40,8 @@ function replaceHtml(template, product){
     return output;
 }
 
+=======
+>>>>>>> Stashed changes
 //Create server
 const server = http.createServer((request, response) => {
     let {query, pathname: path} = url.parse(request.url, true);
