@@ -12,11 +12,12 @@ let products = JSON.parse(fs.readFileSync('./Data/products.json', 'utf-8'));
 let productListHtml = fs.readFileSync('./template/product-list.html', 'utf-8');
 let productDetailHtml = fs.readFileSync('./template/product-details.html', 'utf-8');
 
-//Create server
-const server = http.createServer((request, response) => {
+// Create server
+//SERVER INHERITS FROM EVENTEMITTER
+const server = http.createServer();
+    
+server.on('request', (request, response) => {
     let {query, pathname: path} = url.parse(request.url, true);
-    //console.log(x);
-    //let path = request.url;
 
     if(path === '/' || path.toLocaleLowerCase() === '/home'){
         response.writeHead(200, {
@@ -61,7 +62,8 @@ const server = http.createServer((request, response) => {
         });
         response.end(html.replace('{{%CONTENT%}}', 'ERROR 404: Page not found.'));
     }
-    
+});
+
     // Test to see if fallthrough technique for switch statement is viable for routing. -IT WORKS-
 /*     switch(path.toLocaleLowerCase()) {
 	    case '/':
@@ -78,7 +80,7 @@ const server = http.createServer((request, response) => {
  */
     /* response.end(html);
     console.log('Request received'); */
-});
+
 
 //Start server
 server.listen(8000, '127.0.0.1', () => {
