@@ -3,9 +3,13 @@ const readline = require('readline');
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+const events = require('events');
 
 // USER DEFINED MODULES
 const replaceHtml = require('./Modules/replaceHtml');
+const user = require('./Modules/user');
+
+// THIRD PARTY MODULES
 
 const html = fs.readFileSync('./template/index.html', 'utf-8');
 let products = JSON.parse(fs.readFileSync('./Data/products.json', 'utf-8'));
@@ -86,3 +90,16 @@ server.on('request', (request, response) => {
 server.listen(8000, '127.0.0.1', () => {
     console.log('Server has started')
 });
+
+//Emits and handles custom events
+let myEmitter = new user();
+
+myEmitter.on('userCreated', (id, name) => {
+    console.log(`A new user ${name} with ID ${id} is created!`);
+})
+
+myEmitter.on('userCreated', (id, name) => {
+    console.log(`A new user ${name} with ID ${id} is added in database!`);
+})
+
+myEmitter.emit('userCreated', 101, 'John');
